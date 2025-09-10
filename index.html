@@ -32,7 +32,7 @@
             background-color: var(--dark-space);
             color: var(--text-color);
             line-height: 1.7;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Prevents horizontal scrolling */
         }
         
         h1, h2, h3, .nav-logo {
@@ -211,11 +211,24 @@
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2.2rem; }
+
+            /* Key Fix: Reduce padding on mobile */
+            .container {
+                padding: 1rem;
+            }
+            .section-content {
+                padding: 1.5rem;
+            }
+
+            /* Key Fix: Force single column grid on mobile */
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
             
             .nav-links {
                 position: fixed;
                 left: -100%;
-                top: 5rem;
+                top: 5.5rem; /* Adjusted for header height */
                 flex-direction: column;
                 background-color: var(--dark-space);
                 width: 100%;
